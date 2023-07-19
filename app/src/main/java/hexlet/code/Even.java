@@ -4,24 +4,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Even {
+
     public static String game(String name) {
         Random rand = new Random();
-        boolean state = true;
         int count = 0;
+        greeting();
 
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
-
-        while (count < 3 && state) {
+        while (count < 3) {
             int number = rand.nextInt(1000);
             String check = (number % 2 == 0) ? "yes" : "no";
+            String answer = doAnswer(number);
 
-            System.out.format("Question: %s\n", number);
-            System.out.print("Your answer (yes or no): ");
-            String answer = new Scanner(System.in).nextLine();
-
-            state &= answer.equals(check);
-
-            if (state) {
+            if (answer.equals(check)) {
                 count += 1;
                 System.out.println("Correct!");
             } else {
@@ -34,5 +28,15 @@ public class Even {
             }
         }
         return String.format("Congratulations, %s!", name);
+    }
+
+    private static void greeting() {
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+    }
+
+    private static String doAnswer(int number) {
+        System.out.format("Question: %s\n", number);
+        System.out.print("Your answer (yes or no): ");
+        return new Scanner(System.in).nextLine();
     }
 }
