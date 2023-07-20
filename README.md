@@ -7,3 +7,6 @@
 ### Asciinema Even game preview:
 [![asciicast](https://asciinema.org/a/ovEPtb9fPnWZMteWida7ZAv4e.svg)](https://asciinema.org/a/ovEPtb9fPnWZMteWida7ZAv4e)
 
+### Asciinema Calc game preview:
+[![asciicast](https://asciinema.org/a/K2fSiCKpooNjAPt5nN2RkdpnZ.svg)](https://asciinema.org/a/K2fSiCKpooNjAPt5nN2RkdpnZ)
+
