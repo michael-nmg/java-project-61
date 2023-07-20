@@ -2,6 +2,6 @@ package hexlet.code;
 
 public class App {
     public static void main(String[] args) {
-        Choice.start();
+        Engine.start();
     }
 }
