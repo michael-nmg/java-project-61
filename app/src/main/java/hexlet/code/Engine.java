@@ -1,9 +1,12 @@
 package hexlet.code;
 
+import hexlet.code.game.Even;
+import hexlet.code.game.Calc;
+
 import java.util.Scanner;
 
-public class Choice {
-    private static String[] options = {"Greet", "Even"};
+public class Engine {
+    private static String[] options = {"Greet", "Even", "Calc"};
 
     public static void start() {
         while (true) {
@@ -42,7 +45,7 @@ public class Choice {
             String name = Cli.greeting();
             return switch (choice) {
                 case 2 -> Even.game(name);
-                case 3 -> "3";
+                case 3 -> Calc.game(name);
                 default -> "";
             };
         }
