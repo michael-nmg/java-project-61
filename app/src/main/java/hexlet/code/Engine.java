@@ -1,39 +1,40 @@
 package hexlet.code;
 
-import hexlet.code.games.Even;
-import hexlet.code.games.Calc;
+import hexlet.code.games.Game;
+import hexlet.code.games.extn.Even;
+import hexlet.code.games.extn.Calc;
 
 import java.util.Scanner;
 
 public class Engine {
-    private static String[] options = {"Greet", "Even", "Calc"};
+    private static Game[] games = {
+        new Even(),
+        new Calc(),
+    };
 
     public static void start() {
         while (true) {
-            System.out.println(previewTitle());
-            Scanner scan = doSelect();
+            System.out.println(previewTitles());
+            Integer choice = doSelect();
 
-            if (scan.hasNextInt()) {
-                int choice = scan.nextInt();
-
-                if (choice < 0 || choice > options.length) {
-                    continue;
-                }
-
-                System.out.print(selectChoice(choice));
-                break;
+            if (choice == null) {
+                System.out.println("\nTry again.\n");
+                continue;
             }
 
-            System.out.println("\nTry again.\n");
+            String result = selectChoice(choice);
+            System.out.println(result);
+            break;
         }
     }
 
-    public static String previewTitle() {
+    public static String previewTitles() {
         StringBuilder list = new StringBuilder();
         list.append("Please enter the game number and press Enter.\n");
+        list.append("1 - Greet\n");
 
-        for (int i = 0; i < options.length; ++i) {
-            list.append(String.format("%s - %s%n", i + 1, options[i]));
+        for (int i = 0; i < games.length; ++i) {
+            list.append(String.format("%s - %s%n", i + 2, games[i].getName()));
         }
 
         list.append("0 - Exit");
@@ -41,19 +42,31 @@ public class Engine {
     }
 
     public static String selectChoice(int choice) {
-        if (0 < choice) {
-            String name = Cli.greeting();
-            return switch (choice) {
-                case 2 -> Even.game(name);
-                case 3 -> Calc.game(name);
-                default -> "";
-            };
-        }
-        return "\nGoodbye.\n";
+        var str = "";
+        return switch (choice) {
+            case 0 -> "Goodbye.";
+            case 1 -> {
+                Cli.greeting();
+                yield "";
+            }
+            default -> games[choice - 2].start(Cli.greeting());
+        };
     }
 
-    private static Scanner doSelect() {
+    private static Integer doSelect() {
         System.out.print("Your choice: ");
-        return new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
+
+        if (!scan.hasNextInt()) {
+            return null;
+        }
+
+        int choice = scan.nextInt();
+
+        if (choice < 0 || games.length + 1 < choice) {
+            return null;
+        }
+
+        return choice;
     }
 }
