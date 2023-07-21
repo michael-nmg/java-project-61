@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Game;
 import hexlet.code.games.extn.Even;
 import hexlet.code.games.extn.Calc;
+import hexlet.code.games.extn.Gcd;
 
 import java.util.Scanner;
 
@@ -10,6 +11,7 @@ public class Engine {
     private static Game[] games = {
         new Even(),
         new Calc(),
+        new Gcd(),
     };
 
     public static void start() {
