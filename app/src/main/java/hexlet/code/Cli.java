@@ -6,9 +6,10 @@ public class Cli {
     public static String greeting() {
         System.out.println("\nWelcome to the Brain Games!");
         System.out.print("May I have your name? ");
-        Scanner scan = new Scanner(System.in);
-        String name = scan.nextLine();
-        System.out.format("Hello, %s!\n", name);
+
+        String name = new Scanner(System.in).nextLine();
+
+        System.out.format("Hello, %s!", name);
         return name;
     }
 }
