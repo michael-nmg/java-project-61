@@ -10,3 +10,6 @@
 ### Asciinema Calc game preview:
 [![asciicast](https://asciinema.org/a/K2fSiCKpooNjAPt5nN2RkdpnZ.svg)](https://asciinema.org/a/K2fSiCKpooNjAPt5nN2RkdpnZ)
 
+### Asciinema GCD (Greatest Common Divisor) game preview:
+[![asciicast](https://asciinema.org/a/KPfHoHGSVadz0VMiMHiRZ7VlC.svg)](https://asciinema.org/a/KPfHoHGSVadz0VMiMHiRZ7VlC)
+
