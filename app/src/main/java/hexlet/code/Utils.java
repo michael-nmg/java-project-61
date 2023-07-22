@@ -41,4 +41,34 @@ public class Utils {
         return false;
     }
 
+    public static String makeSequence(int number, int diff) {
+        StringBuilder result = new StringBuilder();
+        int size = 10;
+
+        for (int i = 0; i < size; ++i) {
+            int elem = (i + 1) * diff;
+            String str = String.format("%s", i == number ? ".." : elem);
+            result.append(str);
+
+            if (i != size - 1) {
+                result.append(" ");
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static int gcd(int a, int b) {
+        return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
+    }
+
+    public static int calcEval(int left, int right, String operation) {
+        return switch (operation) {
+            case "+" -> left + right;
+            case "-" -> left - right;
+            case "*" -> left * right;
+            default -> left / right;
+        };
+    }
+
 }
