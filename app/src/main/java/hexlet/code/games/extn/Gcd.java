@@ -3,13 +3,14 @@ package hexlet.code.games.extn;
 import hexlet.code.games.PatternForGame;
 
 public class Gcd extends PatternForGame {
+
     @Override
     protected String[] invariant() {
         int left = random.nextInt(100);
         int rigth = random.nextInt(100);
         String check = String.valueOf(gcd(left, rigth));
-        String eval = String.format("%s %s", left, rigth);
-        String answer = doAnswer(eval);
+        String question = String.format("%s %s", left, rigth);
+        String answer = doAnswer(question);
         return new String[]{answer, check};
     }
 
