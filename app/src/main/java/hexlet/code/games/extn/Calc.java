@@ -11,9 +11,9 @@ public class Calc extends PatternForGame {
         int left = random.nextInt(100);
         int right = random.nextInt(100);
         String oper = operations[random.nextInt(3)];
-        String eval = String.format("%s %s %s", left, oper, right);
+        String question = String.format("%s %s %s", left, oper, right);
         String check = String.valueOf(doCorrect(left, right, oper));
-        String answer = doAnswer(eval);
+        String answer = doAnswer(question);
         return new String[]{answer, check};
     }
 
