@@ -16,3 +16,6 @@
 ### Asciinema Progression game preview:
 [![asciicast](https://asciinema.org/a/cXXCc1LBkSszz0lu05KdEVLak.svg)](https://asciinema.org/a/cXXCc1LBkSszz0lu05KdEVLak)
 
+### Asciinema Prime game preview:
+[![asciicast](https://asciinema.org/a/4Q8bCK4YFklIOC1GHZRpynUqG.svg)](https://asciinema.org/a/4Q8bCK4YFklIOC1GHZRpynUqG)
+
