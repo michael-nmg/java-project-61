@@ -30,8 +30,8 @@ public abstract class PatternForGame implements Game {
 
     protected abstract void greeting();
 
-    protected String doAnswer(String eval) {
-        System.out.format("Question: %s%n", eval);
+    protected String doAnswer(String question) {
+        System.out.format("Question: %s%n", question);
         System.out.print("Your answer: ");
         return new Scanner(System.in).nextLine();
     }
