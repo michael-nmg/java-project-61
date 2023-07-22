@@ -1,11 +1,8 @@
 package hexlet.code.games;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public abstract class PatternForGame implements Game {
-
-    protected final Random random = new Random();
 
     public String start(String name) {
         greeting();
