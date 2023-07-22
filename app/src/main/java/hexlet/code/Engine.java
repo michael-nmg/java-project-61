@@ -4,6 +4,7 @@ import hexlet.code.games.Game;
 import hexlet.code.games.extn.Calc;
 import hexlet.code.games.extn.Even;
 import hexlet.code.games.extn.Gcd;
+import hexlet.code.games.extn.Prime;
 import hexlet.code.games.extn.Progression;
 
 import java.util.Scanner;
@@ -14,6 +15,7 @@ public class Engine {
         new Calc(),
         new Gcd(),
         new Progression(),
+        new Prime(),
     };
 
     public static void start() {
