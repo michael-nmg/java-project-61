@@ -1,12 +1,16 @@
 package hexlet.code.games.extn;
 
+import static hexlet.code.Utils.getRandomNumber;
+
 import hexlet.code.games.PatternForGame;
 
-public class Even extends PatternForGame {
+public final class Even extends PatternForGame {
+
+    private final int endOfRange = 1000;
 
     @Override
     protected String[] invariant() {
-        int number = random.nextInt(1000);
+        int number = getRandomNumber(endOfRange);
         String check = (number % 2 == 0) ? "yes" : "no";
         String answer = doAnswer(String.valueOf(number));
         return new String[]{answer, check};
