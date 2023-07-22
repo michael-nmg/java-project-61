@@ -7,15 +7,15 @@ import hexlet.code.games.PatternForGame;
 
 public final class Progression extends PatternForGame {
 
-    private final int holeRange = 10;
+    private final int lengthSequence = 10;
     private final int rangeOfDifference = 100;
 
     @Override
     protected String[] invariant() {
-        int number = getRandomNumber(holeRange);
         int diff = getRandomNumber(rangeOfDifference);
-        String check = String.valueOf((number + 1) * diff);
-        String question = makeSequence(number, diff);
+        int holeNumber = getRandomNumber(lengthSequence);
+        String check = String.valueOf((holeNumber + 1) * diff);
+        String question = makeSequence(lengthSequence, holeNumber, diff);
         String answer = doAnswer(question);
         return new String[]{answer, check};
     }
