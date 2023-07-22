@@ -4,10 +4,11 @@ import java.util.Scanner;
 
 public abstract class PatternForGame implements Game {
 
+    private final int gameRounds = 3;
+
     public final String start(String name) {
         greeting();
         int count = 0;
-        int gameRounds = 3;
 
         while (count < gameRounds) {
             String[] result = invariant();
@@ -35,7 +36,7 @@ public abstract class PatternForGame implements Game {
     }
 
     /**
-     * Universal for a positive ending.
+     * Universal for a right ending.
      *
      * @param name For back end string text
      * @return String text
@@ -44,6 +45,14 @@ public abstract class PatternForGame implements Game {
         return String.format("Congratulations, %s!", name);
     }
 
+    /**
+     * Universal for a wrong ending.
+     *
+     * @param answer Username answer of subclass for back end string text
+     * @param check  Right answer of subclass for back end string text
+     * @param name   Username of Cli_greeting for back end string text
+     * @return String text
+     */
     private String incorrect(String answer, String check, String name) {
         return new StringBuilder("'")
                 .append(answer)
