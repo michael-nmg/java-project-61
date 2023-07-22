@@ -1,15 +1,19 @@
 package hexlet.code.games.extn;
 
 import static hexlet.code.Utils.makeSequence;
+import static hexlet.code.Utils.getRandomNumber;
 
 import hexlet.code.games.PatternForGame;
 
-public class Progression extends PatternForGame {
+public final class Progression extends PatternForGame {
+
+    private final int holeRange = 10;
+    private final int rangeOfDifference = 100;
 
     @Override
     protected String[] invariant() {
-        int number = random.nextInt(10);
-        int diff = random.nextInt(100);
+        int number = getRandomNumber(holeRange);
+        int diff = getRandomNumber(rangeOfDifference);
         String check = String.valueOf((number + 1) * diff);
         String question = makeSequence(number, diff);
         String answer = doAnswer(question);
