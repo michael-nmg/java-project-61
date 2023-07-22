@@ -13,3 +13,6 @@
 ### Asciinema GCD (Greatest Common Divisor) game preview:
 [![asciicast](https://asciinema.org/a/KPfHoHGSVadz0VMiMHiRZ7VlC.svg)](https://asciinema.org/a/KPfHoHGSVadz0VMiMHiRZ7VlC)
 
+### Asciinema Progression game preview:
+[![asciicast](https://asciinema.org/a/cXXCc1LBkSszz0lu05KdEVLak.svg)](https://asciinema.org/a/cXXCc1LBkSszz0lu05KdEVLak)
+
