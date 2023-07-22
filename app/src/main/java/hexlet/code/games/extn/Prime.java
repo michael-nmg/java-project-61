@@ -1,6 +1,7 @@
 package hexlet.code.games.extn;
 
-import hexlet.code.Utils;
+import static hexlet.code.Utils.isPrime;
+
 import hexlet.code.games.PatternForGame;
 
 public class Prime extends PatternForGame {
@@ -8,7 +9,7 @@ public class Prime extends PatternForGame {
     @Override
     protected String[] invariant() {
         int number = random.nextInt(3573);
-        String check = Utils.isPrime(number) ? "yes" : "no";
+        String check = isPrime(number) ? "yes" : "no";
         String answer = doAnswer(String.valueOf(number));
         return new String[]{answer, check};
     }
