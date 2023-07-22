@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public abstract class PatternForGame implements Game {
 
-    public String start(String name) {
+    public final String start(String name) {
         greeting();
         int count = 0;
+        int gameRounds = 3;
 
-        while (count < 3) {
+        while (count < gameRounds) {
             String[] result = invariant();
             String answer = result[0];
             String check = result[1];
@@ -27,17 +28,23 @@ public abstract class PatternForGame implements Game {
 
     protected abstract void greeting();
 
-    protected String doAnswer(String question) {
+    protected final String doAnswer(String question) {
         System.out.format("Question: %s%n", question);
         System.out.print("Your answer: ");
         return new Scanner(System.in).nextLine();
     }
 
-    protected String itsTrue(String name) {
+    /**
+     * Universal for a positive ending.
+     *
+     * @param name For back end string text
+     * @return String text
+     */
+    private String itsTrue(String name) {
         return String.format("Congratulations, %s!", name);
     }
 
-    protected String incorrect(String answer, String check, String name) {
+    private String incorrect(String answer, String check, String name) {
         return new StringBuilder("'")
                 .append(answer)
                 .append("' is wrong answer ;(. Correct answer was '")
@@ -47,4 +54,5 @@ public abstract class PatternForGame implements Game {
                 .append("!")
                 .toString();
     }
+
 }
