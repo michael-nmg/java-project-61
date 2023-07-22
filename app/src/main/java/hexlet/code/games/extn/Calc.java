@@ -1,18 +1,21 @@
 package hexlet.code.games.extn;
 
 import static hexlet.code.Utils.calcEval;
+import static hexlet.code.Utils.getRandomNumber;
 
 import hexlet.code.games.PatternForGame;
 
-public class Calc extends PatternForGame {
+public final class Calc extends PatternForGame {
 
+    private final int endOfRange = 100;
+    private final int countOperations = 3;
     private final String[] operations = {"+", "-", "*"};
 
     @Override
     protected String[] invariant() {
-        int left = random.nextInt(100);
-        int right = random.nextInt(100);
-        String oper = operations[random.nextInt(3)];
+        int left = getRandomNumber(endOfRange);
+        int right = getRandomNumber(endOfRange);
+        String oper = operations[getRandomNumber(countOperations)];
         String question = String.format("%s %s %s", left, oper, right);
         String check = String.valueOf(calcEval(left, right, oper));
         String answer = doAnswer(question);
