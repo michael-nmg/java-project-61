@@ -1,5 +1,7 @@
 package hexlet.code.games.extn;
 
+import static hexlet.code.Utils.calcEval;
+
 import hexlet.code.games.PatternForGame;
 
 public class Calc extends PatternForGame {
@@ -12,7 +14,7 @@ public class Calc extends PatternForGame {
         int right = random.nextInt(100);
         String oper = operations[random.nextInt(3)];
         String question = String.format("%s %s %s", left, oper, right);
-        String check = String.valueOf(doCorrect(left, right, oper));
+        String check = String.valueOf(calcEval(left, right, oper));
         String answer = doAnswer(question);
         return new String[]{answer, check};
     }
@@ -20,14 +22,6 @@ public class Calc extends PatternForGame {
     @Override
     protected void greeting() {
         System.out.println("\nWhat is the result of the expression?");
-    }
-
-    private int doCorrect(int left, int right, String oper) {
-        return switch (oper) {
-            case "+" -> left + right;
-            case "-" -> left - right;
-            default -> left * right;
-        };
     }
 
     public String getName() {
