@@ -1,5 +1,7 @@
 package hexlet.code.games.extn;
 
+import static hexlet.code.Utils.gcd;
+
 import hexlet.code.games.PatternForGame;
 
 public class Gcd extends PatternForGame {
@@ -8,6 +10,7 @@ public class Gcd extends PatternForGame {
     protected String[] invariant() {
         int left = random.nextInt(100);
         int rigth = random.nextInt(100);
+        rigth += (rigth == 0) ? 1 : 0;
         String check = String.valueOf(gcd(left, rigth));
         String question = String.format("%s %s", left, rigth);
         String answer = doAnswer(question);
@@ -21,10 +24,6 @@ public class Gcd extends PatternForGame {
 
     public String getName() {
         return "GCD";
-    }
-
-    private int gcd(int a, int b) {
-        return (a % b == 0) ? Math.abs(b) : gcd(b, a % b);
     }
 
 }
