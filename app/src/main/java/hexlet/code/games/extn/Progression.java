@@ -1,5 +1,7 @@
 package hexlet.code.games.extn;
 
+import static hexlet.code.Utils.makeSequence;
+
 import hexlet.code.games.PatternForGame;
 
 public class Progression extends PatternForGame {
@@ -21,23 +23,6 @@ public class Progression extends PatternForGame {
 
     public String getName() {
         return "Progression";
-    }
-
-    private String makeSequence(int number, int diff) {
-        StringBuilder result = new StringBuilder();
-        int size = 10;
-
-        for (int i = 0; i < size; ++i) {
-            int elem = (i + 1) * diff;
-            String str = String.format("%s", i == number ? ".." : elem);
-            result.append(str);
-
-            if (i != size - 1) {
-                result.append(" ");
-            }
-        }
-
-        return result.toString();
     }
 
 }
