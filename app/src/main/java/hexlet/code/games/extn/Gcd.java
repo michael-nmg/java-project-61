@@ -1,15 +1,18 @@
 package hexlet.code.games.extn;
 
 import static hexlet.code.Utils.gcd;
+import static hexlet.code.Utils.getRandomNumber;
 
 import hexlet.code.games.PatternForGame;
 
-public class Gcd extends PatternForGame {
+public final class Gcd extends PatternForGame {
+
+    private final int endOfRange = 100;
 
     @Override
     protected String[] invariant() {
-        int left = random.nextInt(100);
-        int rigth = random.nextInt(100);
+        int left = getRandomNumber(endOfRange);
+        int rigth = getRandomNumber(endOfRange);
         rigth += (rigth == 0) ? 1 : 0;
         String check = String.valueOf(gcd(left, rigth));
         String question = String.format("%s %s", left, rigth);
