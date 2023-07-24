@@ -6,7 +6,7 @@ import static hexlet.code.Utils.getRandomNumber;
 
 public final class Even {
 
-    private static int endOfRange = 1000;
+    private static final int END_OF_RANGE = 1000;
 
     public static String game(String name, int roundsCount) {
         description();
@@ -27,7 +27,7 @@ public final class Even {
     }
 
     private static String[] invariant() {
-        int number = getRandomNumber(endOfRange);
+        int number = getRandomNumber(END_OF_RANGE);
         String check = (number % 2 == 0) ? "yes" : "no";
         return new String[]{String.valueOf(number), check};
     }
