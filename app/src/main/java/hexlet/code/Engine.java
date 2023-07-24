@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Engine {
 
-    private static int gameRounds = 3;
+    private static final int GAME_ROUNDS = 3;
     private static String[] games = {"Even", "Calc", "Gcd", "Progression", "Prime"};
 
     public static void start() {
@@ -60,18 +60,27 @@ public class Engine {
         return choice;
     }
 
+    private static String voidStringAfterGreeting() {
+        Cli.greeting();
+        return "";
+    }
+
     public static String selectChoice(int choice) {
         return switch (choice) {
-            case 0 -> "Goodbye.";
-            case 1 -> {
-                Cli.greeting();
-                yield "";
-            }
-            case 2 -> Even.game(Cli.greeting(), gameRounds);
-            case 3 -> Calc.game(Cli.greeting(), gameRounds);
-            case 4 -> Gcd.game(Cli.greeting(), gameRounds);
-            case 5 -> Progression.game(Cli.greeting(), gameRounds);
-            default -> Prime.game(Cli.greeting(), gameRounds);
+            case 0:
+                yield "Goodbye.";
+            case 1:
+                yield voidStringAfterGreeting();
+            case 2:
+                yield Even.game(Cli.greeting(), GAME_ROUNDS);
+            case 3:
+                yield Calc.game(Cli.greeting(), GAME_ROUNDS);
+            case 4:
+                yield Gcd.game(Cli.greeting(), GAME_ROUNDS);
+            case 5:
+                yield Progression.game(Cli.greeting(), GAME_ROUNDS);
+            default:
+                yield Prime.game(Cli.greeting(), GAME_ROUNDS);
         };
     }
 
