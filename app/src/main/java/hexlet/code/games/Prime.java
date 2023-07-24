@@ -7,7 +7,7 @@ import static hexlet.code.Utils.getRandomNumber;
 
 public final class Prime {
 
-    private static int endOfRange = 3573;
+    private static final int END_OF_RANGE = 3573;
 
     public static String game(String name, int roundsCount) {
         description();
@@ -28,7 +28,7 @@ public final class Prime {
     }
 
     private static String[] invariant() {
-        int number = getRandomNumber(endOfRange);
+        int number = getRandomNumber(END_OF_RANGE);
         String check = isPrime(number) ? "yes" : "no";
         return new String[]{String.valueOf(number), check};
     }
