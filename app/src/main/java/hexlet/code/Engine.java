@@ -11,6 +11,12 @@ import java.util.Scanner;
 public class Engine {
 
     private static final int GAME_ROUNDS = 3;
+    private static final int EXIT_TITLE = 0;
+    private static final int GREETING_TITLE = 1;
+    private static final int EVEN_TITLE = 2;
+    private static final int CALC_TITLE = 3;
+    private static final int GCD_TITLE = 4;
+    private static final int PROGRESSION_TITLE = 5;
     private static String[] games = {"Even", "Calc", "Gcd", "Progression", "Prime"};
 
     public static void start() {
@@ -67,20 +73,13 @@ public class Engine {
 
     public static String selectChoice(int choice) {
         return switch (choice) {
-            case 0:
-                yield "Goodbye.";
-            case 1:
-                yield voidStringAfterGreeting();
-            case 2:
-                yield Even.game(Cli.greeting(), GAME_ROUNDS);
-            case 3:
-                yield Calc.game(Cli.greeting(), GAME_ROUNDS);
-            case 4:
-                yield Gcd.game(Cli.greeting(), GAME_ROUNDS);
-            case 5:
-                yield Progression.game(Cli.greeting(), GAME_ROUNDS);
-            default:
-                yield Prime.game(Cli.greeting(), GAME_ROUNDS);
+            case EXIT_TITLE -> "Goodbye.";
+            case GREETING_TITLE -> voidStringAfterGreeting();
+            case EVEN_TITLE -> Even.game(Cli.greeting(), GAME_ROUNDS);
+            case CALC_TITLE -> Calc.game(Cli.greeting(), GAME_ROUNDS);
+            case GCD_TITLE -> Gcd.game(Cli.greeting(), GAME_ROUNDS);
+            case PROGRESSION_TITLE -> Progression.game(Cli.greeting(), GAME_ROUNDS);
+            default -> Prime.game(Cli.greeting(), GAME_ROUNDS);
         };
     }
 
