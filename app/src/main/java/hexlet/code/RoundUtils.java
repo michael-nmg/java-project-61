@@ -2,7 +2,7 @@ package hexlet.code;
 
 import java.util.Scanner;
 
-public class RoundsUtils {
+public class RoundUtils {
 
     public static String getRound(String name, String[] questionAndCheck) {
         String question = questionAndCheck[0];
@@ -17,7 +17,7 @@ public class RoundsUtils {
     }
 
     public static void goodbye() {
-        System.out.println("Goodbye.");
+        System.out.println("\nGoodbye.");
     }
 
     public static void nextTry() {
